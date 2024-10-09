@@ -14,8 +14,8 @@ import java.util.UUID;
 @RequestMapping("/api/users")
 public class EndUsersController {
 
-    private EndUserService endUserService;
-    private RabbitMqPublisher rabbitMqPublisher;
+    private final EndUserService endUserService;
+    private final RabbitMqPublisher rabbitMqPublisher;
 
     public EndUsersController(EndUserService userService, RabbitMqPublisher rabbitMqPublisher) {
         this.endUserService = userService;

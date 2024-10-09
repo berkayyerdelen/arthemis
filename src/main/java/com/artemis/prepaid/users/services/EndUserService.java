@@ -10,7 +10,7 @@ import java.util.UUID;
 @Service
 public class EndUserService {
 
-    private EndUserRepository endUserRepository;
+    private final EndUserRepository endUserRepository;
 
     public EndUserService(EndUserRepository endUserRepository) {
         this.endUserRepository = endUserRepository;
