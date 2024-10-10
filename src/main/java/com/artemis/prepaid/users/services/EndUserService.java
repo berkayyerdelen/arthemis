@@ -1,5 +1,6 @@
 package com.artemis.prepaid.users.services;
 
+import com.artemis.prepaid.users.exceptions.EntityNotFoundException;
 import com.artemis.prepaid.users.models.EndUser;
 import com.artemis.prepaid.users.repositories.EndUserRepository;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,7 @@ public class EndUserService {
 
     public EndUser findById(UUID uniqueId) {
         return endUserRepository.findById(uniqueId)
-                .orElseThrow(() -> new jakarta.persistence.EntityNotFoundException("Entity not found for id: " + uniqueId));
+                .orElseThrow(() -> new EntityNotFoundException("Entity not found for id: " + uniqueId));
     }
 
 }
